@@ -238,7 +238,7 @@
         /* Decorative header lines */
         .tile-header .deco-lines {
             position: absolute;
-            right: 180px;
+            right: 50%;
             top: 0;
             bottom: 0;
             display: flex;
@@ -777,6 +777,13 @@
             .tile-experience  { grid-column: 1 / 3; }
             .tile-education   { grid-column: 1 / 3; }
             .stats-bar { display: none; }
+            .tile-header .deco-lines { display: none; }
+
+        }
+
+        @media (max-width: 1500px) {
+           
+            .tile-header .deco-lines { display: none; }
         }
 
         @media (max-width: 650px) {
@@ -798,6 +805,7 @@
                 flex-direction: row;
                 justify-content: space-between;
             }
+            .tile-header .deco-lines { display: none; }
         }
 
         /* ============================================
