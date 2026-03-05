@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV — Arnaud Gallez</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="cv.png">
     <style>
         /* ============================================
            VARIABLES & RESET
@@ -219,8 +220,8 @@
         .tile-header      { grid-column: 1 / 13; }
         .tile-profil      { grid-column: 1 / 4; }
         .tile-competences { grid-column: 4 / 13; }
-        .tile-experience  { grid-column: 1 / 9; }
-        .tile-education   { grid-column: 9 / 13; }
+        .tile-experience  { grid-column: 1 / 6; }
+        .tile-education   { grid-column: 6 / 13; }
 
         /* ============================================
            HEADER TILE
@@ -238,7 +239,7 @@
         /* Decorative header lines */
         .tile-header .deco-lines {
             position: absolute;
-            right: 50%;
+            right: 35%;
             top: 0;
             bottom: 0;
             display: flex;
@@ -875,7 +876,7 @@
 
     <!-- Loader -->
     <div class="loader-overlay">
-        <div class="loader-text">Chargement...</div>
+        <div class="loader-text">CV Arnaud Gallez</div>
     </div>
 
     <!-- Cursor glow -->
@@ -895,6 +896,7 @@
                     <a href="tel:+32499206377">✆ +32 499 20 63 77</a>
                     <a href="https://www.linkedin.com/in/arnaudgallez/" target="_blank">⬡ LinkedIn</a>
                     <a href="https://github.com/arnaud07" target="_blank">◎ GitHub</a>
+                    <a href="New cv.pdf" download="CV-Arnaud-Gallez.pdf"><strong>Télécharger mon CV</strong></a>
                 </div>
             </div>
 
@@ -933,7 +935,9 @@
                 <p class="profil-text">Né le 16/12/2006</p>
                 <p class="profil-text"><Address class="profil-text">37, rue du lieutenant de crépy</Address></p><p class="profil-text"><address class="profil-text">6811 Les Bulles</address></p>
                 <p class="profil-text">Réside à Namur</p>
+                <br>
                 </ul>
+            
             <h3><span class="dot"></span> À propos <span class="line"></span></h3>
             <p class="profil-text">
                     Étudiant en bachelier IT à l’Hénallux, je m’épanouis dans la gestion d’infrastructures et les systèmes embarqués. Mon approche est avant tout technique et concrète : je vois le code comme un outil au service du matériel et du système, plutôt que comme une fin en soi. Rigoureux et autonome, j’aime transformer des concepts théoriques en solutions physiques fonctionnelles</a>
@@ -959,29 +963,32 @@
 
 
                     <span class="skill-category">Développement et Programmation</span>
-                    <span class="skill-tag accent" data-label="Niveau débutant en langage C.">C</span>
-                    <span class="skill-tag accent" data-label="Niveau débutant en Python.">Python</span>
-                    <span class="skill-tag accent" data-label="SQL, SQLite, MongoDB.">Bases de Données</span>
-                    <span class="skill-tag accent" data-label="Apprentissage des méthodologies et outils DevOps.">DevOps</span>
-                    <span class="skill-tag accent" data-label="Conception et programmation de systèmes embarqués (Arduino, Raspberry Pi).">Systèmes Embarqués</span>
+                    <span class="skill-tag accent" data-label="Niveau débutant en C">C</span>
+                    <span class="skill-tag accent" data-label="Niveau intermédiaire en Python">Python</span>
+                    <span class="skill-tag accent" data-label="Capacité à créer des petits scripts en Bash">Bash</span>
+                    <span class="skill-tag accent" data-label="Capacité à créer des petits scripts en Powershell">Powershell</span>
+
+                    <span class="skill-tag accent" data-label="SQL, SQLite, MongoDB">Bases de Données</span>
+                    <span class="skill-tag accent" data-label="Apprentissage des méthodologies et outils DevOps">DevOps</span>
+                    <span class="skill-tag accent" data-label="Conception et programmation de systèmes embarqués (Arduino, Raspberry Pi)">Systèmes Embarqués</span>
 
                     
                     <span class="skill-category">Soft Skills & Transversal</span>
-                    <span class="skill-tag" data-label="Maîtrise des fondamentaux de la gestion de projet et des outils d'organisation.">Gestion de Projet</span>
-                    <span class="skill-tag" data-label="Rédaction de documents techniques et communication en milieu professionnel.">Communication Professionnelle</span>
-                    <span class="skill-tag" data-label="Sensibilisation aux enjeux du développement durable, à l'éthique et à la déontologie informatique.">Éthique et Déontologie</span>
-                    <span class="skill-tag" data-label="Compréhension des enjeux de la transformation numérique au sein des organisations.">Entreprise Numérique</span>
+                    <span class="skill-tag" data-label="Maîtrise des fondamentaux de la gestion de projet et des outils d'organisation">Gestion de Projet</span>
+                    <span class="skill-tag" data-label="Rédaction de documents techniques et communication en milieu professionnel">Communication Professionnelle</span>
+                    <span class="skill-tag" data-label="Sensibilisation aux enjeux du développement durable, à l'éthique et à la déontologie informatique">Éthique et Déontologie</span>
+                    <span class="skill-tag" data-label="Compréhension des enjeux de la transformation numérique au sein des organisations">Entreprise Numérique</span>
 
                     <span class="skill-category">Outils & Productivité</span>
-                    <span class="skill-tag accent" data-label="Gestion de versions et collaboration sur le code source.">Git / GitHub / GitLab</span>
-                    <span class="skill-tag accent" data-label="Éditeur principal pour le développement et le scripting.">VS Code</span>
-                    <span class="skill-tag accent" data-label="Environnement de développement pour la programmation embarquée.">Arduino IDE</span>
-                    <span class="skill-tag accent" data-label="Virtualisation d'environnements Windows et Linux pour les tests et serveurs.">VirtualBox / VMware</span>
-                    <span class="skill-tag accent" data-label="Déploiement d'applications via des conteneurs isolés.">Docker</span>
-                    <span class="skill-tag accent" data-label="Création de supports de démarrage pour l'installation de systèmes d'exploitation.">Rufus / Ventoy</span>
-                    <span class="skill-tag accent" data-label="Connexion sécurisée à distance aux serveurs et équipements réseau.">PuTTY / SSH</span>
-                    <span class="skill-tag accent" data-label="Maîtrise d'Excel (tableurs), Word (rapports, publipostage) et VBA.">Suite Office</span>
-                    <span class="skill-tag accent" data-label="Outils collaboratifs pour le suivi de projet et l'organisation du travail.">Trello</span>
+                    <span class="skill-tag accent" data-label="Gestion de versions et collaboration sur le code source">Git / GitHub / GitLab</span>
+                    <span class="skill-tag accent" data-label="Éditeur principal pour le développement et le scripting">VS Code</span>
+                    <span class="skill-tag accent" data-label="Environnement de développement pour la programmation embarquée">Arduino IDE</span>
+                    <span class="skill-tag accent" data-label="Virtualisation d'environnements Windows et Linux pour les tests et serveurs">VirtualBox / VMware</span>
+                    <span class="skill-tag accent" data-label="Déploiement d'applications via des conteneurs isolés">Docker</span>
+                    <span class="skill-tag accent" data-label="Création de supports de démarrage pour l'installation de systèmes d'exploitation">Rufus / Ventoy</span>
+                    <span class="skill-tag accent" data-label="Connexion sécurisée à distance aux serveurs et équipements réseau">PuTTY / SSH</span>
+                    <span class="skill-tag accent" data-label="Maîtrise d'Excel (tableurs), Word (rapports, publipostage) et VBA">Suite Office / VBA</span>
+                    <span class="skill-tag accent" data-label="Outils collaboratifs pour le suivi de projet et l'organisation du travail">Trello</span>
 
                     <span class="skill-category">Langues</span>
                     <span class="skill-tag gold" data-label="Langue maternelle : Français">Français</span>
@@ -1002,7 +1009,7 @@
                         <span class="item-title">Attestation de suivi — SecNumacadémie</span>
                         <span class="item-date">2024</span>
                     </div>
-                    <div class="item-subtitle"><a href="https://www.secnumacademie.gouv.fr" target="_blank">SecNumacadémie (ANSSI)</a></div>
+                    <div class="item-subtitle"><a href="DIPLOME.pdf" download="Attestation_de_suivi_SecNum_Arnaud_Gallez.pdf">SecNumacadémie (ANSSI)</a></div>
                 </div>
 
                 <div class="item">
@@ -1011,6 +1018,7 @@
                         <span class="item-date">2024</span>
                     </div>
                     <div class="item-subtitle">Technique en Informatique · IAMP — Institut des Arts et Métiers de Pierrard</div>
+                    <div class="item-subtitle"><a href="dip2.jpg" download="Certificat_technicien_Arnaud_Gallez.pdf">Certificat de qualification</a></div>
                 </div>
 
                 <div class="item">
@@ -1019,6 +1027,7 @@
                         <span class="item-date">2024</span>
                     </div>
                     <div class="item-subtitle">Technique en Informatique · IAMP — Institut des Arts et Métiers de Pierrard</div>
+                    <div class="item-subtitle"><a href="dip1.jpg" download="CESS_Arnaud_Gallez.pdf">CESS</a></div>                
                 </div>
 
             </div>
@@ -1054,6 +1063,8 @@
                         <li>Création d'une infrastructure informatique</li>
                         <li>Création d'un système réseaux complets avec integrations de serveurs de stockage, web, déploiement, pare-feu, ADDS, ...</li>
                     </ul>
+                    <div class="item-subtitle"><a href="RapportEAC4_AG.pdf" download="Rapport_ProjetJuin2024_Arnaud_Gallez.pdf">Rapport de projet</a></div>
+
                 </div>
                 <div class="item">
                     <div class="item-header">
