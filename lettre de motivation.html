@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lettre de motivation — Arnaud GALLEZ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #e8edf5;
+            --surface: #ffffff;
+            --surface2: #f8faff;
+            --border: rgba(2, 132, 199, 0.15);
+            --border-hover: rgba(2, 132, 199, 0.5);
+            --primary: #0284c7;
+            --primary-dim: rgba(2, 132, 199, 0.1);
+            --accent: #db2777;
+            --accent-dim: rgba(219, 39, 119, 0.08);
+            --gold: #d97706;
+            --text: #0f172a;
+            --text-muted: #94a3b8;
+            --text-soft: #475569;
+            --glow: 0 0 30px rgba(2, 132, 199, 0.15);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Syne', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        
+        
+        
+        
+
+        /* 1. Modifiez la classe .page-a4 comme ceci */
+        .page-a4 {
+            width: min(210mm, 96vw);
+            min-height: 297mm; /* Remplace l'aspect-ratio pour garder le format A4 de base */
+            position: relative; 
+            z-index: 1;
+            /* overflow: hidden;  <-- SUPPRIMER CETTE LIGNE */
+        }
+
+        /* 2. Modifiez la classe .dashboard comme ceci */
+        .dashboard {
+            width: 100%; 
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: auto; /* Laisse les lignes s'ajuster au contenu */
+            gap: 7px;
+        }
+
+        /* 3. Modifiez la classe .tile comme ceci */
+        .tile {
+            background: var(--surface);
+            border-radius: 10px;
+            padding: 10px 12px;
+            border: 1px solid var(--border);
+            position: relative;
+            min-height: 0;
+            /* overflow: hidden; <-- SUPPRIMER CETTE LIGNE pour laisser dépasser le texte si besoin */
+        }
+        
+        .tile:hover { border-color: var(--border-hover); }
+        
+        
+        
+        
+        
+        
+
+        /* ── GRID PLACEMENT ── */
+        .tile-header      { grid-column: 1/13; grid-row: 1; }
+        .tile-profil      { grid-column: 1/13;  grid-row: 2; }
+
+        /* ── HEADER ── */
+        .tile-header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 12px 18px;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+            overflow: hidden;
+        }
+        
+        
+        
+        
+        
+        
+
+        .header-info{
+            position: relative; 
+            z-index: 9999 !important; /* On le force tout en haut de la pile */
+            pointer-events: auto !important;
+        }
+
+        .header-info h1 {
+            font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.7em; line-height: 1.05;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+             margin-bottom: 2px;
+        }
+        
+        .header-info h2 {
+            font-size: 0.65em; font-weight: 400; color: var(--text-soft);
+            letter-spacing: 0.08em; text-transform: uppercase; font-family: 'Space Mono', monospace;
+            
+        }
+        .contact-info {
+            margin-top: 7px; display: flex; flex-wrap: wrap; gap: 5px;
+            
+        }
+        .contact-info a {
+            color: var(--text-soft); text-decoration: none; font-size: 0.6em;
+            font-family: 'Space Mono', monospace; padding: 3px 9px; border-radius: 20px;
+            border: 1px solid var(--border); background: var(--primary-dim);
+             display: flex; align-items: center; gap: 4px;
+        }
+        .contact-info a:hover { color: var(--primary); border-color: var(--primary); }
+
+        /* ── SECTION TITLES ── */
+        .tile h3 {
+            font-family: 'Space Mono', monospace; font-size: 0.9em;
+            letter-spacing: 0.1em; text-transform: uppercase; color: var(--primary);
+            margin-bottom: 10px; display: flex; align-items: center; gap: 8px;
+        }
+        .tile h3 .dot {
+            width: 6px; height: 6px; border-radius: 50%;
+            background: var(--primary); box-shadow: 0 0 6px var(--primary);
+             flex-shrink: 0;
+        }
+        
+        .tile h3 .line { flex: 1; height: 1px; background: linear-gradient(to right, var(--primary), transparent); opacity: 0.3; }
+
+        /* ── PROFIL ── */
+        .tile-profil { background: linear-gradient(160deg, #ffffff 0%, #f0f7ff 100%); }
+        .avatar-ring {
+            width: 40px; height: 40px; border-radius: 50%;
+            border: 2px solid var(--primary); display: flex; align-items: center;
+            justify-content: center; font-size: 1.1em; margin-bottom: 9px;
+            box-shadow: 0 0 12px rgba(2,132,199,0.2); background: var(--primary-dim); position: relative;
+        }
+        
+        
+        .profil-text { color: var(--text-soft); font-size: 1.0em; line-height: 1.65; }
+        .status-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-family: 'Space Mono', monospace; font-size: 0.57em; color: #16a34a;
+            border: 1px solid rgba(22,163,74,0.3); background: rgba(22,163,74,0.07);
+            padding: 3px 9px; border-radius: 20px; margin-top: 9px;
+        }
+        .status-badge::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: #16a34a; display: inline-block; }
+        
+
+        /* ── COMPÉTENCES ── */
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 5px; }
+        .skill-tag {
+            background: var(--primary-dim); color: var(--primary);
+            padding: 4px 8px; border-radius: 6px; font-size: 0.6em; font-weight: 600;
+            border: 1px solid rgba(2,132,199,0.2); cursor: default;
+             position: relative; overflow: hidden;
+        }
+        
+        .skill-tag:hover { border-color: var(--primary); }
+        
+
+        .skill-tag.accent { background: var(--accent-dim); color: var(--accent); border-color: rgba(219,39,119,0.2); }
+        .skill-tag.accent:hover { border-color: var(--accent); }
+        
+
+        .skill-tag.gold { background: rgba(217,119,6,0.08); color: var(--gold); border-color: rgba(217,119,6,0.2); }
+        .skill-tag.gold:hover { border-color: var(--gold); }
+        
+
+        .skill-category {
+            width: 100%; font-family: 'Space Mono', monospace; font-size: 0.52em;
+            text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-muted);
+            margin-top: 7px; margin-bottom: 3px;
+        }
+        .skill-category:first-child { margin-top: 0; }
+
+        /* ── ITEMS ── */
+        .item {
+            margin-bottom: 10px; padding-bottom: 9px;
+            border-bottom: 1px solid var(--border);
+            position: relative; padding-left: 10px; 
+        }
+        
+        
+        .item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        
+
+        .item-header { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 2px; flex-wrap: wrap; }
+        .item-title { font-weight: 700; font-size: 0.72em; color: var(--text); font-family: 'Syne', sans-serif; }
+        .item-date {
+            font-family: 'Space Mono', monospace; font-size: 0.58em; color: var(--primary);
+            background: var(--primary-dim); padding: 2px 8px; border-radius: 20px;
+            border: 1px solid rgba(2,132,199,0.2); white-space: nowrap; flex-shrink: 0;
+        }
+        .item-subtitle { font-size: 0.63em; color: var(--text-muted); font-style: italic; margin-bottom: 5px; font-family: 'Space Mono', monospace; }
+
+        ul { padding-left: 0; list-style: none; }
+        ul li { color: var(--text-soft); font-size: 0.63em; padding: 2px 0 2px 13px; position: relative; line-height: 1.5; }
+        ul li::before { content: '→'; position: absolute; left: 0; color: var(--primary); font-size: 0.85em; opacity: 0.6; }
+
+        /* ── EDUCATION ACCENT ── */
+        .tile-education .item-date { color: var(--accent); background: var(--accent-dim); border-color: rgba(219,39,119,0.2); }
+        .tile-education 
+        .tile-education h3 .dot { background: var(--accent); box-shadow: 0 0 6px var(--accent); }
+        .tile-education h3 { color: var(--accent); }
+        .tile-education h3 .line { background: linear-gradient(to right, var(--accent), transparent); }
+
+        .tile-experience { background: linear-gradient(135deg, #ffffff 70%, #f0f7ff 100%); }
+
+        /* ── STATS ── */
+        .stats-bar { display: flex; gap: 18px; flex-shrink: 0;  }
+        .stat { text-align: center; }
+        .stat-number { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.3em; color: var(--primary); line-height: 1; display: block; }
+        .stat-number.accent { color: var(--accent); }
+        .stat-label { font-family: 'Space Mono', monospace; font-size: 0.52em; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.07em; display: block; margin-top: 2px; }
+        .stat-divider { width: 1px; background: var(--border); align-self: stretch; }
+        .header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+
+        /* ── CURSOR ── */
+        
+
+        ::-webkit-scrollbar { width: 3px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+
+        /* ── LOADER ── */
+        
+        
+        
+        
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 900px) {
+            .page-a4 { width: 100%; aspect-ratio: auto; }
+            .dashboard { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+            .tile-header      { grid-column: 1/3; grid-row: auto; }
+            .tile-profil      { grid-column: 1/2; grid-row: auto; }
+            .tile-competences { grid-column: 2/3; grid-row: auto; }
+            .tile-experience  { grid-column: 1/3; grid-row: auto; }
+            .tile-education   { grid-column: 1/3; grid-row: auto; }
+            .stats-bar, 
+        }
+        @media (max-width: 550px) {
+            .dashboard { grid-template-columns: 1fr; }
+            .tile-header, .tile-profil, .tile-competences, .tile-experience, .tile-education { grid-column: 1/2; }
+            .tile-header { flex-direction: column; gap: 14px; align-items: flex-start; }
+            
+        }
+        @media print {
+            body { padding: 0; background: white; }
+            body::before, body::after, .cursor-glow, 
+            .page-a4 { width: 210mm; aspect-ratio: 1 / 1.41421356; }
+            .tile {  box-shadow: none; }
+            .tile:hover { border-color: var(--border-hover); }
+        }
+    </style>
+</head>
+<body>
+    </div>
+    
+
+    <div class="page-a4">
+        <div class="dashboard">
+
+            <header class="tile tile-header">
+                <div class="header-info">
+                    <div style="display:flex; align-items:center; gap:12px; margin-bottom:2px;">
+                    <img src="pp.png" style="width:85px; height:85px; border-radius:50%; border:2px solid var(--primary); object-fit:cover;">
+                    <h1>Arnaud GALLEZ</h1>
+                </div>  
+                    <h2>2ème année Bachelier technologies de l'informatique</h2>
+                    <div class="contact-info">
+                        <a href="mailto:arnaud.gallez@arnaudgallez.be">✉ arnaud.gallez@arnaudgallez.be</a>
+                        <a href="tel:+32499206377">✆ +32 499 20 63 77</a>
+                        <a href="https://www.linkedin.com/in/arnaudgallez/" target="_blank">⬡ linkedin.com/in/arnaudgallez</a>
+                        <a href="https://github.com/arnaud07" target="_blank">◎ github.com/arnaud07</a>
+                        <a href="https://arnaudgallez.be/" target="_blank"><strong> 🌐 arnaudgallez.be </strong></a>
+                        
+                    </div>
+                </div>
+
+            </header>
+
+            <section class="tile tile-profil">
+               
+                <h3><span class="dot"></span><strong>Objet : Candidature au poste de Directeur IT et Transformation Numérique</strong> <span class="line"></span></h3>
+                <ul>
+                <p class="profil-text">Madame, Monsieur,</p>
+                <br>
+                <p class="profil-text"> L’Université de Namur incarne l’excellence académique belge depuis des siècles. Votre institution place aujourd'hui la transformation numérique au cœur de sa stratégie de développement. La modernisation de vos architectures IT et la gouvernance des services numériques représentent des défis passionnants pour soutenir vos missions de recherche. Votre recherche d'un leadership capable d'opérationnaliser des choix stratégiques majeurs démontre une vision d'avenir ambitieuse.</p>
+                <br>
+                <p class="profil-text">Actuellement en deuxième année de bachelier en technologies de l'informatique à l’Hénallux Namur, je forge mon expertise sur le terrain de la technique concrète. Mon approche considère le code comme un levier au service du matériel. Dans ce cadre, j'ai conçu une infrastructure informatique complète lors de mon projet de fin de cycle secondaire. Cette réalisation incluait l'intégration de serveurs de stockage, de déploiement, de pare-feu et de services ADDS. Actuellement, je pilote la création d'un système embarqué pour un robot télécommandé via une liaison LORA et Raspberry PI. Ma certification SecNumacadémie (ANSSI) atteste de ma vigilance permanente sur les enjeux de cybersécurité. L'usage régulier d'outils DevOps et de solutions de virtualisation comme Docker ou VMware assure la fiabilité de mes déploiements.</p>
+                <br>
+                <p class="profil-text">Mon parcours témoigne d'une grande autonomie et d'une rigueur constante dans la transformation de concepts théoriques en solutions physiques. En dehors du monde numérique, la pratique de la danse du dragon développe mon sens du collectif et ma coordination au sein d'une équipe soudée. Ces valeurs humaines complètent mon profil technique. Elles garantissent mon adaptabilité face à des équipes pluridisciplinaires.</p>
+                <br>
+                <p class="profil-text">Votre institution trouvera en moi un collaborateur dynamique, passionné par l'évolution des infrastructures et prêt à s'investir dans vos projets d'envergure. Un entretien me permettrait de vous prouver ma détermination pour ce poste stratégique. </p>
+                <br>
+                <p class="profil-text">Je vous prie d’agréer, Madame, Monsieur, l’expression de mes salutations distinguées.</p>
+                <p class="profil-text"><strong>Arnaud GALLEZ</strong></p>
+                <br>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        const glow = document.getElementById('cursorGlow');
+        document.addEventListener('mousemove', e => {
+            glow.style.left = e.clientX + 'px';
+            glow.style.top  = e.clientY + 'px';
+        });
+
+        function animateCounter(el, target, duration = 1200) {
+            let start = 0;
+            const step = ts => {
+                if (!start) start = ts;
+                const p = Math.min((ts - start) / duration, 1);
+                el.textContent = Math.round((1 - Math.pow(1-p, 3)) * target);
+                if (p < 1) requestAnimationFrame(step);
+            };
+            requestAnimationFrame(step);
+        }
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelectorAll('.stat-number').forEach(el => {
+                    animateCounter(el, parseInt(el.textContent, 10));
+                });
+            }, 800);
+        });
+
+        document.querySelectorAll('.tile').forEach(tile => {
+            tile.addEventListener('mousemove', e => {
+                const r = tile.getBoundingClientRect();
+                const dx = (e.clientX - (r.left + r.width/2))  / (r.width/2);
+                const dy = (e.clientY - (r.top  + r.height/2)) / (r.height/2);
+                tile.style.transform = `translateY(-4px) scale(1.01) rotateY(${dx*3}deg) rotateX(${-dy*3}deg)`;
+            });
+            tile.addEventListener('mouseleave', () => {
+                tile.style.transform = '';
+                tile.style.transition = 'transform 0.6s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.45s ease, border-color 0.3s ease';
+                setTimeout(() => { tile.style.transition = ''; }, 600);
+            });
+        });
+    </script>
+</body>
+</html> 
